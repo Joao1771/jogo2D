@@ -9,7 +9,7 @@ def salvar():
         # getValores -> retorna uma lista com todos os valores de status.py
         for item in status.getValores():
             arquivo.write(str(item) + " ")
-        print("Jogo salvo!                ")
+        print("Jogo salvo no save.txt!                ")
 
 # contrario de salvar: pega os valores do save.txt e define os de status
 def carregar():
@@ -22,9 +22,9 @@ def carregar():
                 if item != '':
                     carregados.append(int(item))
         else:
-            print("O save está vazio.      ")
+            print("O save está vazio.        ")
             novo_jogo()
-            esperar(10000000)
+            esperar(100000000)
             return
     
     # cada variavel de status recebe um valor do arquivo
@@ -34,8 +34,8 @@ def carregar():
     status.lerdeza_tiro = carregados[3]
     status.fase = carregados[4]
     status.onda = carregados[5]
-    print("carregando save...")
-    esperar(10000000)
+    print("carregando save...                 ")
+    esperar(100000000)
 
 # define os valores do arquivo e do status como iniciais
 def novo_jogo():
@@ -48,8 +48,8 @@ def novo_jogo():
     arquivo = open("save.txt", "w")
     arquivo.write("3 1 0 13 1 0")
     arquivo.close()
-    print("Criando novo save...       ")
-    esperar(10000000)
+    print("Criando novo save...        ")
+    esperar(100000000)
 
 # simula um loading rodando um while até o número "segundos"
 def esperar(segundos):

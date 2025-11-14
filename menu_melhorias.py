@@ -123,7 +123,7 @@ def menu_melhorias():
         if valor == vida_lvl[1]: custo = custo_upg_1
         elif valor == vida_lvl[2]: custo = custo_upg_2
         elif valor == vida_lvl[3]: return moedas, valor
-        if moedas > custo:
+        if moedas >= custo:
             moedas -= custo
             valor += 1
         return moedas,valor

@@ -80,7 +80,8 @@ def jogo():
                 return True
         return False
 
-    # Mostra a tela, suas bordas * e os acertos
+    # Mostra as bordas * da tela
+    def mostrar_tela(tela,altura,largura):
         print("*" * (largura + 2))
         for x in range(altura):
             print("*", end='')
@@ -177,7 +178,7 @@ def jogo():
     #função com o WConio2 para receber qualquer entrada
     def entrada_jogador():
         nonlocal aviao_x, aviao_y, tiro_x, tiro_y, altura, largura
-        print(f"a,→ d,← w,↑ s,↓ f=fogo.", f"{status.moedas}R$  {mostrar_vida(vidas)}       ")
+        print(f"a,→ d,← w,↑ s,↓ f=fogo.", f"{moedas}R$  {mostrar_vida(vidas)}       ")
         if WConio2.kbhit():
             codigo, simbolo = WConio2.getch()
             #print(codigo, " ", simbolo)  # descobre o codigo da tecla pressionada
@@ -345,7 +346,6 @@ def jogo():
             status.moedas = moedas
             status.fase += 1
             status.onda = 0
-            salvar.salvar()
             trocar_tela.trocar_tela("menu_melhorias")
             break
 
